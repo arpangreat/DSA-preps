@@ -1,3 +1,5 @@
-# DSA-preps
+ DSA-preps
 
-last time I was on 1:41:17 { Recursion and Space Complexity } on [this video](https://www.youtube.com/watch?v=8hly31xKli0&t=1899s)
+# Data Structure
+
+a data storage format. It is the collection of values and the format they are stored in, the relationship between the values in the collection as well as the operations applied on the data stored in the structure.
