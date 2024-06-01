@@ -8,24 +8,26 @@
 #
 #  [1]<->[2]<->[3]<->[4] // Both Way Nodes (<->)
 
+
 class Node:
     """
-        An object for storing a singly node of a linked list
-        Model Two attributes - data and linked to the next node in the list
+    An object for storing a singly node of a linked list
+    Model Two attributes - data and linked to the next node in the list
     """
 
     data = None
     next_node = None
 
-    def  __init__(self, data) :
+    def __init__(self, data):
         self.data = data
 
     def __repr__(self):
-        return "<Node Data: %s>" %self.data
+        return "<Node Data: %s>" % self.data
+
 
 class LinkedList:
     """
-        Singly Linked List
+    Singly Linked List
     """
 
     def __init__(self):
@@ -36,14 +38,14 @@ class LinkedList:
 
     def size(self):
         """
-            Return the number of nodes in the list 
-            Takes O(n) time
+        Return the number of nodes in the list
+        Takes O(n) time
         """
 
         current = self.head
         count = 0
 
-        while current: # same as current != None
+        while current:  # same as current != None
             count += 1
             current = current.next_node
 
@@ -51,8 +53,8 @@ class LinkedList:
 
     def add(self, data):
         """
-            Adds New Node containing data at head of the list
-            Takes O(1) Time
+        Adds New Node containing data at head of the list
+        Takes O(1) Time
         """
         new_node = Node(data)
         new_node.next_node = self.head
@@ -60,10 +62,10 @@ class LinkedList:
 
     def search(self, key):
         """
-            Search for the first node containing the data that matched the key
-            Returns the node or `None` if not found
+        Search for the first node containing the data that matched the key
+        Returns the node or `None` if not found
 
-            Takes O(n) time
+        Takes O(n) time
         """
         current = self.head
 
@@ -77,10 +79,10 @@ class LinkedList:
 
     def insert(self, data, index):
         """
-            Inserts A new node containing data in index position
-            Insertion takes O(1) time but finding the node at the Insertion points takes O(n) time
-            
-            i.e. It Takes over-all O(n)
+        Inserts A new node containing data in index position
+        Insertion takes O(1) time but finding the node at the Insertion points takes O(n) time
+
+        i.e. It Takes over-all O(n)
         """
 
         if index == 0:
@@ -103,9 +105,9 @@ class LinkedList:
 
     def remove(self, key):
         """
-            Removes node containing the data that matches the key
-            Returns the node or None if the key doesn't exists
-            Takes O(n) time
+        Removes node containing the data that matches the key
+        Returns the node or None if the key doesn't exists
+        Takes O(n) time
         """
 
         current = self.head
@@ -140,23 +142,20 @@ class LinkedList:
 
     def __repr__(self):
         """
-            Returns a String represantation of the list
-            Takes O(n) time
+        Returns a String represantation of the list
+        Takes O(n) time
         """
 
-        nodes= []
+        nodes = []
         current = self.head
 
         while current:
             if current is self.head:
-                nodes.append("[Head: %s]" %current.data)
+                nodes.append("[Head: %s]" % current.data)
             elif current.next_node is None:
-                nodes.append("[Tail: %s]" %current.data)
+                nodes.append("[Tail: %s]" % current.data)
             else:
-                nodes.append("[%s]" %current.data)
+                nodes.append("[%s]" % current.data)
 
             current = current.next_node
-        return '-> '.join(nodes)
-
-
-
+        return "-> ".join(nodes)

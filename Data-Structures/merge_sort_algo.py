@@ -1,15 +1,15 @@
 def merge_sort(list):
     """
-        Sorts a list in ascending order
-        Returns a new sorted list
+    Sorts a list in ascending order
+    Returns a new sorted list
 
-        // It depends on Divide and Conquer Algorithmic Process
+    // It depends on Divide and Conquer Algorithmic Process
 
-        Divide: Find the midpoint of the list and divide into sublists
-        Conquer: Recursively sort the sublists created in previous step
-        Combine: Merge the sorted sublists created in previous step
+    Divide: Find the midpoint of the list and divide into sublists
+    Conquer: Recursively sort the sublists created in previous step
+    Combine: Merge the sorted sublists created in previous step
 
-        Takes overall O(n log n) time
+    Takes overall O(n log n) time
     """
 
     if len(list) <= 1:
@@ -22,33 +22,35 @@ def merge_sort(list):
 
     return merge(left, right)
 
+
 def split(list):
     """
-        Divide the unsorted list at the midpoint into sublists
-        Returns two sublists - left and right
+    Divide the unsorted list at the midpoint into sublists
+    Returns two sublists - left and right
 
-        Takes O(log n) time
+    Takes O(log n) time
     """
-        
-    mid = len(list)//2
+
+    mid = len(list) // 2
 
     left = list[:mid]
     right = list[mid:]
 
     return left, right
 
+
 def merge(left, right):
     """
-        Merges two lists (arrays), sorting them in the process
-        Returns a new merged list
+    Merges two lists (arrays), sorting them in the process
+    Returns a new merged list
 
-        Takes O(n) time
+    Takes O(n) time
     """
 
     l = []
     i = 0
     j = 0
-    
+
     while i < len(left) and j < len(right):
         if left[i] < right[j]:
             l.append(left[i])
@@ -67,6 +69,7 @@ def merge(left, right):
 
     return l
 
+
 def verify_sorted(list):
     n = len(list)
 
@@ -74,6 +77,7 @@ def verify_sorted(list):
         return True
 
     return list[0] < list[1] and verify_sorted(list[1:])
+
 
 # TEST:  Testing
 Alist = [54, 62, 93, 17, 77, 31, 44, 55, 20]

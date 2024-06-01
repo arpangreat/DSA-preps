@@ -1,12 +1,13 @@
 from linked_list import LinkedList
 
+
 def merge_sort(linked_list):
     """
-        Sorts A LinkedList in ascending order
-        - Recursively divide linked list into sublists containing a single node
-        - Repeatedly merge the sublists to produce sorted sublists until one remains
+    Sorts A LinkedList in ascending order
+    - Recursively divide linked list into sublists containing a single node
+    - Repeatedly merge the sublists to produce sorted sublists until one remains
 
-        Returns A Sorted linked list
+    Returns A Sorted linked list
     """
 
     if linked_list.size() == 1:
@@ -20,9 +21,10 @@ def merge_sort(linked_list):
 
     return merge(left, right)
 
+
 def split(linked_list):
     """
-        Divide the unsorted list at midpoint into sublists
+    Divide the unsorted list at midpoint into sublists
     """
 
     if linked_list == None or linked_list.head == None:
@@ -32,7 +34,7 @@ def split(linked_list):
         return left_half, right_half
     else:
         size = linked_list.size()
-        mid = size//2
+        mid = size // 2
 
         mid_node = linked_list.node_at_index(mid - 1)
 
@@ -43,13 +45,14 @@ def split(linked_list):
 
         return left_half, right_half
 
+
 def merge(left, right):
     """
-        Merges Two LinkedList sorting by data in the nodes 
-        Returns a new merged list
+    Merges Two LinkedList sorting by data in the nodes
+    Returns a new merged list
     """
 
-    # Create a new linked list that contains nodes from 
+    # Create a new linked list that contains nodes from
     # merging left and right
     merged = LinkedList()
 
@@ -63,8 +66,8 @@ def merge(left, right):
     left_head = left.head
     right_head = right.head
 
-    # Iterating Over left and right until we reach the tail node 
-    # of either 
+    # Iterating Over left and right until we reach the tail node
+    # of either
     while left_head or right_head:
         # If the head node of left linked list None, we pass the tail
         # Add the node from right to merged linked list
@@ -96,12 +99,13 @@ def merge(left, right):
 
         # Move current to the next node
         current = current.next_node
-                
+
     # Discard fake head and set first merged node as head
     head = merged.head.next_node
     merged.head = head
 
     return merged
+
 
 l = LinkedList()
 l.add(10)
